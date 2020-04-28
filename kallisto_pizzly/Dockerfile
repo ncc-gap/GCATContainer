@@ -14,7 +14,8 @@ RUN apt-get update && \
     wget \
     zlib1g-dev \
     dpkg-dev \
-    libc6-dev
+    libc6-dev \
+    libtool
 
 # kallisto-0.46.2
 RUN wget https://github.com/pachterlab/kallisto/archive/v0.46.2.tar.gz && \
