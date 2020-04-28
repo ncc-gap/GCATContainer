@@ -38,6 +38,15 @@ RUN wget https://github.com/pmelsted/pizzly/archive/v0.37.3.tar.gz && \
     mv pizzly ../bin/
 
 # biobambam
+RUN wget https://github.com/gt1/libmaus/archive/0.0.196-release-20150326095654.tar.gz && \
+    tar xzvf 0.0.196-release-20150326095654.tar.gz && \
+    rm -f 0.0.196-release-20150326095654.tar.gz && \
+    cd libmaus-0.0.196-release-20150326095654 && \
+    autoreconf -i -f && \
+    ./configure && \
+    make && \
+    make install
+
 RUN wget -nc https://github.com/gt1/biobambam/archive/0.0.191-release-20150401083643.tar.gz && \
     tar xzvf 0.0.191-release-20150401083643.tar.gz && \
     rm -f 0.0.191-release-20150401083643.tar.gz && \
@@ -45,6 +54,6 @@ RUN wget -nc https://github.com/gt1/biobambam/archive/0.0.191-release-2015040108
     autoreconf -i -f && \
     ./configure && \
     make && \
-    make install && \
+    make install
 
 CMD ["/bin/bash"]
