@@ -2,6 +2,8 @@ FROM debian:9.11
 
 MAINTAINER Ai Okada <aokada@ncc.go.jp>
 
+WORKDIR /tools
+
 RUN apt-get -y update && \
     apt-get install -y wget dpkg-dev gcc g++ libc6-dev make patch tar unzip zlib1g-dev libbz2-dev liblzma-dev autoconf autotools-dev libtool pkg-config
 
@@ -24,10 +26,7 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.7/samtools-1.7
 ##########
 # Biobambam
 
-RUN mkdir /tools && \
-    cd /tools && \
-    echo "build libmaus-0.0.196" && \
-    wget https://github.com/gt1/libmaus/archive/0.0.196-release-20150326095654.tar.gz && \
+RUN wget https://github.com/gt1/libmaus/archive/0.0.196-release-20150326095654.tar.gz && \
     tar xzvf 0.0.196-release-20150326095654.tar.gz && \
     rm -f 0.0.196-release-20150326095654.tar.gz && \
     cd libmaus-0.0.196-release-20150326095654 && \
@@ -46,7 +45,13 @@ RUN mkdir /tools && \
     ./configure && \
     make && \
     make install
-     
+
+##########
+## STAR-fusion
+RUN wget https://github.com/STAR-Fusion/STAR-Fusion/releases/download/STAR-Fusion-v1.9.0/STAR-Fusion.v1.9.0.FULL.tar.gz && \
+    tar xzvf STAR-Fusion.v1.9.0.FULL.tar.gz && \
+    mv STAR-Fusion.v1.9.0/STAR-Fusion /usr/local/bin
+    
 ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
 CMD ["/bin/bash"]
