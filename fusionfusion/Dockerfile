@@ -25,10 +25,10 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.7/htslib-1.7.tar
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
-RUN pip install annot_utils==0.2.0
-RUN pip install pysam==0.13
-RUN pip install fusionfusion==0.4.0
-RUN pip install chimera_utils==0.4.1
+RUN pip install annot_utils==0.3.1
+RUN pip install pysam==0.15.4
+RUN pip install fusionfusion==0.5.0
+RUN pip install chimera_utils==0.6.0
 
 RUN apt-get update && apt-get install -y \
     libkrb5-3 \
@@ -42,4 +42,3 @@ RUN wget https://github.com/friend1ws/fusion_utils/archive/v0.2.0.tar.gz && \
 RUN cd  /usr/local/bin && \
     wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat
 RUN chmod a+x /usr/local/bin/blat
-
