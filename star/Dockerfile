@@ -49,8 +49,7 @@ RUN wget https://github.com/gt1/libmaus/archive/0.0.196-release-20150326095654.t
 ##########
 ## STAR-fusion
 RUN wget https://github.com/STAR-Fusion/STAR-Fusion/releases/download/STAR-Fusion-v1.9.0/STAR-Fusion.v1.9.0.FULL.tar.gz && \
-    tar xzvf STAR-Fusion.v1.9.0.FULL.tar.gz && \
-    mv STAR-Fusion.v1.9.0/STAR-Fusion /usr/local/bin
+    tar xzvf STAR-Fusion.v1.9.0.FULL.tar.gz
     
 ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
