@@ -35,7 +35,6 @@ ENV LD_LIBRARY_PATH /Complete-Striped-Smith-Waterman-Library-1.1/src
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install pysam==0.13
-RUN pip install annot_utils==0.2.0
-RUN pip install intron_retention_utils==0.4.0
-
+RUN pip install pysam==0.15.4
+RUN pip install annot_utils==0.3.1
+RUN pip install intron_retention_utils==0.6.3
