@@ -3,7 +3,7 @@ FROM python:3.7.4-buster
 MAINTAINER Ai Okada <aokada@ncc.go.jp>
 
 RUN apt-get -y update && \
-    apt-get install -y wget unzip
+    apt-get install -y wget unzip openjdk-11-jre-headless
 
 WORKDIR /tools
 
