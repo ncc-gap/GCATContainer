@@ -66,6 +66,14 @@ RUN wget https://sourceforge.net/projects/samtools/files/samtools/1.9/samtools-1
     make && \
     make install
 
+# htslib-1.9
+RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2 && \
+    tar jxvf htslib-1.9.tar.bz2 && \
+    cd htslib-1.9 && \
+    ./configure && \
+    make && \
+    make install 
+
 # gatk-4.1.0.0
 RUN wget https://github.com/broadinstitute/gatk/releases/download/4.1.0.0/gatk-4.1.0.0.zip && \
     unzip gatk-4.1.0.0.zip && \
