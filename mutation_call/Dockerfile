@@ -34,10 +34,10 @@ RUN pip install pysam==0.15.3 && \
     pip install edlib==1.3.8.post2
     
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.0.zip && \
-    unzip v0.3.0.zip && \
-    rm -f v0.3.0.zip && \
-    cd GenomonMutationFilter-0.3.0 && \
+    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.1.zip && \
+    unzip v0.3.1.zip && \
+    rm -f v0.3.1.zip && \
+    cd GenomonMutationFilter-0.3.1 && \
     python setup.py install
     
 RUN cd /tools && \
