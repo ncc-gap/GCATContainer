@@ -18,9 +18,9 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9
 ##########
 ## STAR
 
-RUN wget https://github.com/alexdobin/STAR/archive/2.7.6a.tar.gz && \
-    tar xzvf 2.7.6a.tar.gz && \
-    mv STAR-2.7.6a/bin/Linux_x86_64_static/STAR /usr/local/bin
+RUN wget https://github.com/alexdobin/STAR/archive/2.7.9a.tar.gz && \
+    tar xzvf 2.7.9a.tar.gz && \
+    mv STAR-2.7.9a/bin/Linux_x86_64_static/STAR /usr/local/bin
 
 ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
 
