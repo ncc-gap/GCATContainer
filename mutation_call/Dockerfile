@@ -41,10 +41,10 @@ RUN cd /tools && \
     python setup.py install
     
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/GenomonFisher/archive/v0.4.5.zip && \
-    unzip v0.4.5.zip && \
-    rm -f v0.4.5.zip && \
-    cd GenomonFisher-0.4.5 && \
+    wget -nc https://github.com/Genomon-Project/GenomonFisher/archive/v0.4.6.zip && \
+    unzip v0.4.6.zip && \
+    rm -f v0.4.6.zip && \
+    cd GenomonFisher-0.4.6 && \
     python setup.py install
     
 RUN cd /tools && \
