@@ -34,11 +34,12 @@ RUN pip install pysam==0.15.3 && \
     pip install vcfpy==0.13.3 && \
     pip install edlib==1.3.8.post2
     
+    
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.1.zip && \
-    unzip v0.3.1.zip && \
-    rm -f v0.3.1.zip && \
-    cd GenomonMutationFilter-0.3.1 && \
+    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.2.zip && \
+    unzip v0.3.2.zip && \
+    rm -f v0.3.2.zip && \
+    cd GenomonMutationFilter-0.3.2 && \
     python setup.py install
     
 RUN cd /tools && \
@@ -49,17 +50,17 @@ RUN cd /tools && \
     python setup.py install
     
 RUN cd /tools && \
-    wget -nc https://github.com/ken0-1n/mutation_util/archive/v0.6.0.zip && \
-    unzip v0.6.0.zip && \
-    rm -f v0.6.0.zip && \
-    cd mutation_util-0.6.0 && \
+    wget -nc https://github.com/ken0-1n/mutation_util/archive/v0.6.1.zip && \
+    unzip v0.6.1.zip && \
+    rm -f v0.6.1.zip && \
+    cd mutation_util-0.6.1 && \
     python setup.py install
-
+    
 RUN cd /tools && \
     wget -nc https://github.com/Genomon-Project/EBFilter/archive/refs/tags/v0.2.2.zip && \
     unzip v0.2.2.zip && \
     rm -f v0.2.2.zip && \
-    cd EBFilter-0.2.2 && \
+    cd  EBFilter-0.2.2 && \
     python setup.py install
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
