@@ -1,0 +1,19 @@
+FROM gcatworkflow/sra-toolkit:2.11.0
+
+MAINTAINER Ai Okada <aokada@ncc.go.jp>
+
+RUN apt-get -y update && \
+    apt-get install -y python3 awscli fuse
+
+RUN wget -q https://github.com/kahing/goofys/releases/latest/download/goofys && \
+    mv goofys /usr/local/bin/ && \
+    chmod +x /usr/local/bin/goofys && \
+     \
+    wget -q https://golang.org/dl/go1.17.2.linux-amd64.tar.gz && \
+    tar -xzf go1.17.2.linux-amd64.tar.gz && \
+    mv go/bin/go /usr/local/bin/ && \
+    chmod +x /usr/local/bin/go
+
+RUN wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/star/goofys/sra_fastq_dump.sh && \
+    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/star/goofys/over_minute.py
+    
