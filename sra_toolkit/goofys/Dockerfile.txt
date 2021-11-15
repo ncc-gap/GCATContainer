@@ -14,6 +14,6 @@ RUN wget -q https://github.com/kahing/goofys/releases/latest/download/goofys && 
     mv go/bin/go /usr/local/bin/ && \
     chmod +x /usr/local/bin/go
 
-RUN wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/star/goofys/sra_fastq_dump.sh && \
-    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/star/goofys/over_minute.py
+RUN wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/sra_toolkit/goofys/sra_fastq_dump.sh && \
+    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/sra_toolkit/goofys/over_minute.py
     
