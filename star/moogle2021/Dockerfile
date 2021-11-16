@@ -1,4 +1,4 @@
-FROM debian:9.11
+FROM gcatworkflow/star:0.3.0
 
 MAINTAINER Ai Okada <aokada@ncc.go.jp>
 
@@ -8,22 +8,11 @@ RUN apt-get -y update && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-WORKDIR /tools
-
 ##########
-# samtools
-RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
-    tar jxvf samtools-1.9.tar.bz2 && \
-    cd samtools-1.9/htslib-1.9 && ./configure && make && make install && \
-    cd ../ && ./configure --without-curses && make && make install
-    
-##########
-# STAR
-RUN wget https://github.com/alexdobin/STAR/archive/2.7.9a.tar.gz && \
-    tar xzvf 2.7.9a.tar.gz && \
-    mv STAR-2.7.9a/bin/Linux_x86_64_static/STAR /usr/local/bin
-
-ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
+# biobambam
+RUN wget -q https://github.com/gt1/biobambam/releases/download/0.0.191-release-20150401083643/biobambam-0.0.191-release-20150401083643-x86_64-etch-linux-gnu.tar.gz && \
+    tar -xzf biobambam-0.0.191-release-20150401083643-x86_64-etch-linux-gnu.tar.gz  && \
+    ln -s /tools/biobambam-0.0.191-release-20150401083643-x86_64-etch-linux-gnu/bin/bamtofastq /usr/local/bin/bamtofastq
 
 ##########
 # fastq-dump
@@ -58,10 +47,8 @@ RUN wget -q https://github.com/gt1/biobambam/releases/download/0.0.191-release-2
 
 RUN wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATWorkflowCloud/master/gcat_workflow_cloud/script/bamtofastq.sh && \
     wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATWorkflowCloud/master/gcat_workflow_cloud/script/star-align.sh && \
-    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/star/goofys/over_minute.py
-
-RUN wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/sra_toolkit/goofys/sra_fastq_dump.sh && \
-    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/sra_toolkit/goofys/over_minute.py
+    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/sra_toolkit/moogle2021/sra_fastq_dump.sh && \
+    wget -q https://raw.githubusercontent.com/ncc-ccat-gap/GCATContainer/master/sra_toolkit/moogle2021/over_minute.py
     
 
 #RUN apt-get install -y rsyslog
