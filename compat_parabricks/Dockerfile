@@ -58,18 +58,18 @@ RUN wget http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.15.tar.bz2 && \
     cd bwa-0.7.15 && \
     make
 
-# samtools-1.9
-RUN wget https://sourceforge.net/projects/samtools/files/samtools/1.9/samtools-1.9.tar.bz2 && \
-    tar xjf samtools-1.9.tar.bz2 && \
-    rm -f samtools-1.9.tar.bz2 && \
-    cd samtools-1.9 && \
+# samtools-1.14
+RUN wget https://sourceforge.net/projects/samtools/files/samtools/1.14/samtools-1.14.tar.bz2 && \
+    tar xjf samtools-1.14.tar.bz2 && \
+    rm -f samtools-1.14.tar.bz2 && \
+    cd samtools-1.14 && \
     make && \
     make install
 
-# htslib-1.9
-RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2 && \
-    tar jxvf htslib-1.9.tar.bz2 && \
-    cd htslib-1.9 && \
+# htslib-1.14
+RUN wget https://github.com/samtools/htslib/releases/download/1.14/htslib-1.14.tar.bz2 && \
+    tar jxvf htslib-1.14.tar.bz2 && \
+    cd htslib-1.14 && \
     ./configure && \
     make && \
     make install 
