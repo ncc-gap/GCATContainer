@@ -13,6 +13,7 @@ RUN apt-get update && \
     libbz2-dev \
     liblzma-dev \
     libncurses5-dev \
+    libcurl3-dev \
     make \
     openjdk-8-jre \
     software-properties-common \
