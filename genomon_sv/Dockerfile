@@ -22,6 +22,13 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.11/htslib-1.11.t
     make && \
     make install
 
+RUN wget https://github.com/samtools/htslib/releases/download/1.11/samtools-1.11.tar.bz2 && \
+    tar jxvf samtools-1.11.tar.bz2 && \
+    cd samtools-1.11 && \
+    ./configure && \
+    make && \
+    make install
+    
 RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
 
