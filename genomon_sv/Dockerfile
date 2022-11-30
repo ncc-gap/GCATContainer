@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 MAINTAINER Yuichi Shiraishi <friend1ws@gmail.com> 
 MAINTAINER Kenichi Chiba <kchiba@hgc.jp>
+MAINTAINER Ai Okada <aokada@ncc.go.jp>
 
 RUN apt-get update && apt-get install -y \
     git \
