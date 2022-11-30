@@ -36,9 +36,14 @@ RUN pip3 install annot_utils==0.3.1
 RUN pip3 install pysam==0.16.0.1
 RUN pip3 install numpy==1.19.5
 RUN pip3 install scipy==1.5.4
-RUN pip3 install genomon-sv==0.8.2
+#RUN pip3 install genomon-sv==0.8.2
 RUN pip3 install edlib==1.3.8.post2
 
+RUN wget https://github.com/Genomon-Project/GenomonSV/archive/refs/tags/v0.8.3.tar.gz && \
+    tar xzvf v0.8.3.tar.gz && \
+    cd GenomonSV-0.8.3 && \
+    pip3 install .
+    
 # sv_utils
 RUN pip3 install sv_utils==0.6.1
 RUN pip3 install primer3-py==0.6.1
