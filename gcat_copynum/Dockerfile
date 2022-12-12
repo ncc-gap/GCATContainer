@@ -41,7 +41,7 @@ cd bedtools2 && make && make install
 
 RUN cd /tools && \
 wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig && \
-chmod 750 bedGraphToBigWig
+chmod 755 bedGraphToBigWig
 
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade setuptools
