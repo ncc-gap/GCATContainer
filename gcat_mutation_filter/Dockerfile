@@ -18,14 +18,14 @@ RUN pip install pysam==0.15.4 && \
     pip install edlib==1.3.8.post2 && \
     pip install pandas==1.3.3
     
-ADD SNV2MNV-0.2.0.tar.gz /tools
-RUN cd /tools/SNV2MNV-0.2.0 && \
+ADD SNV2MNV-0.3.0.tar.gz /tools
+RUN cd /tools/SNV2MNV-0.3.0 && \
     python3 setup.py install
 
 RUN cd /tools && \
-    wget -nc https://github.com/ken0-1n/GenomonHotspotCall/archive/refs/tags/v0.5.0.tar.gz && \
-    tar xzvf v0.5.0.tar.gz && \
-    cd GenomonHotspotCall-0.5.0 && \
+    wget -nc https://github.com/ken0-1n/GenomonHotspotCall/archive/refs/tags/v0.6.1.tar.gz && \
+    tar xzvf v0.6.1.tar.gz && \
+    cd GenomonHotspotCall-0.6.1 && \
     python setup.py install
 
 RUN cd /tools && \
@@ -67,7 +67,7 @@ RUN cd /tools && \
     make && \
     make install
 
-ADD gcat_post_process_scripts-0.1.0 /tools/gcat_post_process_scripts
+ADD gcat_post_process_scripts-0.2.0 /tools/gcat_post_process_scripts
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV PATH=${PATH}:/tools/bin
