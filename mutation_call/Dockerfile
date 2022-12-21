@@ -36,10 +36,10 @@ RUN pip install pysam==0.15.3 && \
     
     
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.4.zip && \
-    unzip v0.3.4.zip && \
-    rm -f v0.3.4.zip && \
-    cd GenomonMutationFilter-0.3.4 && \
+    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.6.zip && \
+    unzip v0.3.6.zip && \
+    rm -f v0.3.6.zip && \
+    cd GenomonMutationFilter-0.3.6 && \
     python setup.py install
     
 RUN cd /tools && \
