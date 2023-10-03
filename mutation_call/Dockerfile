@@ -32,14 +32,15 @@ RUN pip install pysam==0.15.3 && \
     pip install PyVCF==0.6.8 && \
     pip install scipy==1.6.3 && \
     pip install vcfpy==0.13.3 && \
-    pip install edlib==1.3.8.post2
+    pip install edlib==1.3.8.post2 && \
+    pip install parasail==1.3.4
     
     
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.3.6.zip && \
-    unzip v0.3.6.zip && \
-    rm -f v0.3.6.zip && \
-    cd GenomonMutationFilter-0.3.6 && \
+    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.4.1.zip && \
+    unzip v0.4.1.zip && \
+    rm -f v0.4.1.zip && \
+    cd GenomonMutationFilter-0.4.1 && \
     python setup.py install
     
 RUN cd /tools && \

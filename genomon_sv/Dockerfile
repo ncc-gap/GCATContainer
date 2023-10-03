@@ -39,10 +39,11 @@ RUN pip3 install numpy==1.19.5
 RUN pip3 install scipy==1.5.4
 #RUN pip3 install genomon-sv==0.8.2
 RUN pip3 install edlib==1.3.8.post2
+RUN pip3 install parasail==1.3.4
 
-RUN wget https://github.com/Genomon-Project/GenomonSV/archive/refs/tags/v0.8.3.tar.gz && \
-    tar xzvf v0.8.3.tar.gz && \
-    cd GenomonSV-0.8.3 && \
+RUN wget https://github.com/Genomon-Project/GenomonSV/archive/refs/tags/v0.9.1.tar.gz && \
+    tar xzvf v0.9.1.tar.gz && \
+    cd GenomonSV-0.9.1 && \
     pip3 install .
     
 # sv_utils
