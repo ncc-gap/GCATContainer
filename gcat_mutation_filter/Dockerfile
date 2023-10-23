@@ -67,7 +67,7 @@ RUN cd /tools && \
     make && \
     make install
 
-ADD gcat_post_process_scripts-0.2.0 /tools/gcat_post_process_scripts
+ADD gcat_post_process_scripts-0.5.0 /tools/gcat_post_process_scripts
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV PATH=${PATH}:/tools/bin
