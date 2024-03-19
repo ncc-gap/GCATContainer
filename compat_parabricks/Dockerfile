@@ -75,9 +75,9 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.14/htslib-1.14.t
     make && \
     make install 
 
-# gatk-4.1.0.0
-RUN wget https://github.com/broadinstitute/gatk/releases/download/4.1.0.0/gatk-4.1.0.0.zip && \
-    unzip gatk-4.1.0.0.zip && \
-    rm -f gatk-4.1.0.0.zip
+# gatk-4.2.0.0
+RUN wget https://github.com/broadinstitute/gatk/releases/download/4.2.0.0/gatk-4.2.0.0.zip && \
+    unzip gatk-4.2.0.0.zip && \
+    rm -f gatk-4.2.0.0.zip
 
 CMD ["/bin/bash"]
