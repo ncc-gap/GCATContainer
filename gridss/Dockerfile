@@ -11,7 +11,7 @@ cd htslib-1.9 && \
 make && \
 make install
 
-RUN sed -i 's;which;/usr/bin/which;' /opt/gridss/gridss
+RUN sed -i 's;which;/usr/bin/which;g' /opt/gridss/gridss
 ENTRYPOINT []
 
 CMD ["/bin/bash"]
