@@ -35,5 +35,5 @@ RUN cd  /usr/local/bin && \
 
 RUN wget -q https://github.com/Genomon-Project/fusionfusion/archive/refs/tags/v0.5.2.tar.gz && \
     tar zxvf v0.5.2.tar.gz && \
-    cd nanomonsv-0.5.2 && \
+    cd fusionfusion-0.5.2 && \
     pip3 install . 
