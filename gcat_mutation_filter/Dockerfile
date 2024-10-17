@@ -75,7 +75,7 @@ RUN cd /tools && \
     cd GenomonMutationFilter-0.5.10 && \
     python setup.py install
 
-ADD gcat_post_process_scripts-0.6.0 /tools/gcat_post_process_scripts
+ADD gcat_post_process_scripts-0.7.1 /tools/gcat_post_process_scripts
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV PATH=${PATH}:/tools/bin
