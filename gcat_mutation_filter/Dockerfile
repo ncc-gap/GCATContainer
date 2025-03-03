@@ -36,9 +36,9 @@ RUN cd /tools && \
     python setup.py install
 
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/EBFilter/archive/refs/tags/v0.2.2.zip && \
-    unzip v0.2.2.zip && \
-    cd  EBFilter-0.2.2 && \
+    wget -nc https://github.com/ncc-gap/EBFilter/archive/refs/tags/v0.3.1.zip && \
+    unzip v0.3.1.zip && \
+    cd  EBFilter-0.3.1 && \
     python setup.py install
  
 RUN cd /tools/bin && \
@@ -75,7 +75,7 @@ RUN cd /tools && \
     cd GenomonMutationFilter-0.5.10 && \
     python setup.py install
 
-ADD gcat_post_process_scripts-0.7.2 /tools/gcat_post_process_scripts
+ADD gcat_post_process_scripts-0.7.1 /tools/gcat_post_process_scripts
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV PATH=${PATH}:/tools/bin
