@@ -36,9 +36,9 @@ RUN cd /tools && \
     python setup.py install
 
 RUN cd /tools && \
-    wget -nc https://github.com/ncc-gap/EBFilter/archive/refs/tags/v0.3.1.zip && \
-    unzip v0.3.1.zip && \
-    cd  EBFilter-0.3.1 && \
+    wget -nc https://github.com/ncc-gap/EBFilter/archive/refs/tags/v0.3.2.zip && \
+    unzip v0.3.2.zip && \
+    cd  EBFilter-0.3.2 && \
     python setup.py install
  
 RUN cd /tools/bin && \
