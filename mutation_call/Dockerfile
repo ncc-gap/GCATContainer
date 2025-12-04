@@ -1,4 +1,4 @@
-FROM python:3.7.10-buster
+FROM python:3.8.20-bullseye
 
 MAINTAINER kchiba <kechiba@ncc.go.jp>
 
