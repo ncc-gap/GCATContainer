@@ -27,20 +27,20 @@ RUN cd /tools && \
 
 # python package
 RUN pip install --upgrade pip
-RUN pip install pysam==0.15.3 && \
-    pip install numpy==1.20.3 && \
+RUN pip install pysam==0.15.4 && \
+    pip install numpy==1.21.2 && \
     pip install PyVCF==0.6.8 && \
-    pip install scipy==1.6.3 && \
+    pip install scipy==1.7.1 && \
     pip install vcfpy==0.13.3 && \
     pip install edlib==1.3.8.post2 && \
     pip install parasail==1.3.4
     
     
 RUN cd /tools && \
-    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.4.1.zip && \
-    unzip v0.4.1.zip && \
-    rm -f v0.4.1.zip && \
-    cd GenomonMutationFilter-0.4.1 && \
+    wget -nc https://github.com/Genomon-Project/GenomonMutationFilter/archive/v0.5.11.zip && \
+    unzip v0.5.11.zip && \
+    rm -f v0.5.11.zip && \
+    cd GenomonMutationFilter-0.5.11 && \
     python setup.py install
     
 RUN cd /tools && \
