@@ -1,4 +1,4 @@
-FROM python:3.8.20-bullseye
+FROM python:3.8.20-bookworm
 
 MAINTAINER kchiba <kechiba@ncc.go.jp>
 
@@ -35,11 +35,9 @@ RUN cd /tools && \
     cd mutation_util-0.6.4 && \
     python setup.py install
 
-RUN cd /tools && \
-    wget -nc https://github.com/ncc-gap/EBFilter/archive/refs/tags/v0.3.2.zip && \
-    unzip v0.3.2.zip && \
-    cd  EBFilter-0.3.2 && \
-    python setup.py install
+ADD EBFilter-0.3.2.tar.gz /tools
+RUN cd /tools/EBFilter-0.3.2 && \
+    python3 setup.py install
  
 RUN cd /tools/bin && \
     wget -nc https://github.com/arq5x/bedtools2/releases/download/v2.30.0/bedtools.static.binary && \
@@ -75,10 +73,11 @@ RUN cd /tools && \
     cd GenomonMutationFilter-0.5.10 && \
     python setup.py install
 
-ADD gcat_post_process_scripts-0.8.2 /tools/gcat_post_process_scripts
+ADD gcat_post_process_scripts-0.8.3 /tools/gcat_post_process_scripts
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV PATH=${PATH}:/tools/bin
 
 CMD ["/bin/bash"]
+
 
