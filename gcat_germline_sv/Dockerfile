@@ -1,4 +1,4 @@
-FROM python:3.8.6-buster
+FROM python:3.8.20-bookworm
 
 MAINTAINER ken-ichi chiba <kchiba@hgc.jp>
 
@@ -60,4 +60,5 @@ RUN echo "build gcat-sv" && \
 cd /tools/GCATSV-0.0.9 && \
 python3 setup.py install
 
-ADD gcat_post_process_scripts-0.1.0 /tools/gcat_post_process_scripts
+ADD gcat_post_process_scripts-0.8.3 /tools/gcat_post_process_scripts
+
